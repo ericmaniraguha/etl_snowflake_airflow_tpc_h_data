@@ -1,0 +1,11 @@
+
+dbt-snowflake
+dbt-core 
+# dbt-postgres 
+# dbt-redshift 
+# dbt-snowflake 
+# dbt-bigquery 
+# dbt-trino
+
+
+# pip install -r requirements.txtpip install -r requirements.txt
