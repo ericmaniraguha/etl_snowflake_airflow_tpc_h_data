@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: tpc_h
-    database: snowflake_sample_data
-    schema: raw
-    tables:
-      - name: customer
-        description: "Customer data from TPC-H benchmark"
