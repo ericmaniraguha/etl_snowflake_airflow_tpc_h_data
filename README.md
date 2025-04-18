@@ -62,7 +62,8 @@ create schema dbt_db.dbt_schema;
 -- drop database if exists dbt_db;
 -- drop role if exists dbt_role;
 ```
-
+![Project worksheet Queries](image.png)
+![aProject worksheet](image-1.png)
 ### 3. Configure Python Environment
 Create and activate a virtual environment:
 ```bash
