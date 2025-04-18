@@ -145,9 +145,12 @@ models:
 - Create new folders: `staging` and `marts` inside the models directory
 
 ### 9. Create Package Dependencies
-Create a `packages.yml` file in the root directory:
+Create a `dbt_packages.yml` file in the root directory: which is created after running `dbt deps`
 ```yaml
 packages:
   # List of packages to install
   - package: dbt-labs/dbt_utils
-    version: 1.9.4  # Check for latest version at https://github.com/dbt-labs/dbt-core
+    version: [">=1.0.0", "<=1.3.0"] # Check for latest version at https://github.com/dbt-labs/dbt-core
+
+
+Note: This has generated the `dbt_pages\dbts_util` which contains other files and has generated also `package-lock.yml`
