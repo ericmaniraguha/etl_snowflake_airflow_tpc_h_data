@@ -1,18 +1,21 @@
-# DBT Project: Transformed Models - fact tables and data marts.
+# DBT Project: Transformed Models - Fact Tables and Data Marts
 
 ## Project Progress
 - ✅ Setup dbt + Snowflake
-- ✅ Configure dbt_project.yml and packages
+- ✅ Configure dbt_project.yml and packages  
 - ✅ Create source and staging tables
 - ✅ Transformed models (fact tables, data marts)
 - ⬜ Macro functions
 - ⬜ Generic and singular tests
 - ⬜ Deploy models using Airflow
 
-### create the fact table 
-==> which is a dimensional, table that represent numeric events that connected to other tables 
+## Creating Fact Tables
 
-inside the marts create : int_order_items.sql add 
+Fact tables represent numeric events or measurements that are connected to various dimension tables. They are central to dimensional modeling in a data warehouse.
+
+### Creating an Intermediate Order Items Model
+
+In the `models/marts/` directory, create `int_order_items.sql`:
 
 ```sql
 -- Transform models (fact tables, data marts)
@@ -33,6 +36,17 @@ join
 order by
     orders.order_date
 ```
-<!-- create marts models -->
- then run `dbt run -s +int_order_items+` without ++ it was generating error or `dbt run ` only. 
 
+### Running the Model
+
+To run this specific model and its dependencies:
+```bash
+dbt run -s +int_order_items+
+```
+
+Alternatively, run all models with:
+```bash
+dbt run
+```
+
+> **Note:** When using the selector syntax (`-s +int_order_items+`), the plus signs are required to include dependencies. Without them, you might encounter errors.
