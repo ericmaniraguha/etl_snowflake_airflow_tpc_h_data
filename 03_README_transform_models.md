@@ -48,5 +48,5 @@ Alternatively, run all models with:
 ```bash
 dbt run
 ```
-
+![Table relationship from modelss](image-3.png)
 > **Note:** When using the selector syntax (`-s +int_order_items+`), the plus signs are required to include dependencies. Without them, you might encounter errors.
