@@ -70,6 +70,10 @@ dbt run
 
 The model ran successfully with no errors.
 
+### 4. Verification inside the snowflake 
+
+![DBT Schema from DB ](image-2.png)
+
 ## Next Steps
 - Create additional staging models for remaining source tables
 - Build dimension and fact tables based on the staging models
