@@ -100,7 +100,7 @@ dbt init etl_project_tcp_h_data
 ### 5. Configure Snowflake Connection
 During initialization, configure your database connection:
 - Select database: `snowflake`
-- Account: `https://mgxxxx.uae-north.azure.xxxxxxxxxxxxxxxxxxx.com`
+- Account: `mgxxxx.uae-north.azure`
 - User: `ericmaniraguha`
 - Authentication Type: `password`
 - Role: `dbt_role`

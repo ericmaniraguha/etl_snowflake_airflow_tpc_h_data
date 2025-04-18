@@ -1,9 +1,20 @@
 version: 2
 
 sources:
-  - name: tpc_h
+  - name: tpch
     database: snowflake_sample_data
-    schema: raw
+    schema: tpch_sf1
     tables:
-      - name: customer
-        description: "Customer data from TPC-H benchmark"
+      - name: orders
+        columns:
+          - name: o_orderkey
+            tests:
+              - unique
+              - not_null
+      - name: lineitem
+        columns:
+          - name: l_orderkey
+            tests:
+              - relationships:  # This is a relationship test that checks if the l_orderkey in lineitem exists in the o_orderkey in orders 
+                  to: source('tpch', 'orders')
+                  field: o_orderkey
