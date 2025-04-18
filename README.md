@@ -1,7 +1,16 @@
-# ETL Project README
+# ETL Project README 
 
 ## Overview
 This project demonstrates an ELT (Extract, Load, Transform) pipeline using DBT for transformation, Snowflake as the data warehouse, and Airflow for orchestration. The project utilizes the TPC-H sample dataset available in Snowflake to build fact tables and data marts.
+
+All task Scope:
+    - Setup dbt + Snowflake  (done)
+    - Configure dbt_project.yml and packages (done)
+    - Create source and staging tables (next)
+    - Transformed models (fact tables, data marts)
+    - Macro functions
+    - Generic and singular tests
+    - Deploy models using Airflow
 
 ## Tools Used
 
@@ -62,7 +71,8 @@ create schema dbt_db.dbt_schema;
 -- drop database if exists dbt_db;
 -- drop role if exists dbt_role;
 ```
-
+![Project worksheet Queries](image.png)
+![aProject worksheet](image-1.png)
 ### 3. Configure Python Environment
 Create and activate a virtual environment:
 ```bash
