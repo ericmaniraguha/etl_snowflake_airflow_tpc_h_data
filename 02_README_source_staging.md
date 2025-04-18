@@ -74,6 +74,31 @@ The model ran successfully with no errors.
 
 ![DBT Schema from DB ](image-2.png)
 
+add `stg_tpch_line_itmes.sql ` to the taging 
+
+```sql
+select
+    {{
+        -- Generate a surrogate key for the line item using the order key and line number
+        -- This is a composite key that uniquely identifies each line item in an order
+        -- Used when you have multiple tables you want to join on the same key
+        dbt_utils.generate_surrogate_key([
+            'l_orderkey',
+            'l_linenumber'
+        ])
+    }} as order_item_key,
+	l_orderkey as order_key,
+	l_partkey as part_key,
+	l_linenumber as line_number,
+	l_quantity as quantity,
+	l_extendedprice as extended_price,
+	l_discount as discount_percentage,
+	l_tax as tax_rate
+from
+    {{ source('tpch', 'lineitem') }}
+
+    ```
+
 ## Next Steps
 - Create additional staging models for remaining source tables
 - Build dimension and fact tables based on the staging models
