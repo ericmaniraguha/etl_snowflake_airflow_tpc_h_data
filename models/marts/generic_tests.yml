@@ -1,0 +1,18 @@
+models:
+  - name: fct_orders
+    columns:
+      - name: order_key
+        tests:
+          - unique                      # ✅ Checks that order_key is unique
+          - not_null                   # ✅ Checks that order_key has no nulls
+          - relationships:             # ✅ Checks that order_key matches a key in another model
+              to: ref('stg_tpch_orders')
+              field: order_key
+              severity: warn           # ⚠️ This failure will generate a warning instead of error
+
+      - name: status_code
+        tests:
+          - accepted_values:           # ✅ Checks that status_code is one of P, O, or F
+              values: ['P', 'O', 'F']
+
+
