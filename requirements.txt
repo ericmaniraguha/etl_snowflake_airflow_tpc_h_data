@@ -1,6 +1,9 @@
 
 dbt-snowflake
 dbt-core 
+astronomer-cosmos
+apache-airflow-providers-snowflake
+astronomer-cosmos
 # dbt-postgres 
 # dbt-redshift 
 # dbt-snowflake 
